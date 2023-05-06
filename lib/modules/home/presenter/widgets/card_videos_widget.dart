@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:instagram_memes/shared/stores/app_store.dart';
+import 'package:instagram_memes/core_module/services/themeMode/theme_mode_controller.dart';
 import 'package:instagram_memes/utils/constants.dart';
 
 class CardVideoWidget extends StatefulWidget {
@@ -13,9 +12,7 @@ class CardVideoWidget extends StatefulWidget {
 class _CardVideoWidgetState extends State<CardVideoWidget> {
   @override
   Widget build(BuildContext context) {
-    final appStore = context.watch<AppStore>(
-      (store) => store.themeMode,
-    );
+    final appStore = ThemeModeController.appStore;
 
     return Container(
       padding: const EdgeInsets.all(kPadding),
@@ -34,6 +31,7 @@ class _CardVideoWidgetState extends State<CardVideoWidget> {
               color: appStore.themeMode.value == ThemeMode.dark
                   ? Colors.white
                   : Colors.white,
+              fontWeight: FontWeight.bold,
             ),
           ),
           Divider(
@@ -47,7 +45,7 @@ class _CardVideoWidgetState extends State<CardVideoWidget> {
               IconButton(
                 onPressed: () {},
                 icon: Icon(
-                  Icons.download,
+                  Icons.file_download_rounded,
                   color: appStore.themeMode.value == ThemeMode.dark
                       ? Colors.white
                       : Colors.white,
@@ -57,7 +55,7 @@ class _CardVideoWidgetState extends State<CardVideoWidget> {
               IconButton(
                 onPressed: () {},
                 icon: Icon(
-                  Icons.share,
+                  Icons.share_rounded,
                   color: appStore.themeMode.value == ThemeMode.dark
                       ? Colors.white
                       : Colors.white,

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
+import 'package:instagram_memes/core_module/services/themeMode/theme_mode_controller.dart';
 import 'package:instagram_memes/modules/home/presenter/widgets/card_videos_widget.dart';
 import 'package:instagram_memes/shared/components/my_input_widget.dart';
-import 'package:instagram_memes/shared/stores/app_store.dart';
 import 'package:instagram_memes/utils/constants.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,13 +14,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final appStore = context.watch<AppStore>(
-      (store) => store.themeMode,
-    );
+    final appStore = ThemeModeController.appStore;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Instagram Creator'),
+        title: const Text(nameApp),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(kBorderRadius),

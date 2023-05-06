@@ -2,16 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-class Constants {
-  static String urlVendasDiarias = 'vendas/vendas';
-  static String urlVendasLucro = 'vendas/projecao';
-  static String urlVendasGrafico = 'vendas/grafico';
-  static String urlMovimento = 'movimento/saldo';
-  static String urlResumoFP = 'formaspag/resumo';
-  static String urlCR = 'contas/cr';
-  static String urlCP = 'contas/cp';
-  static String urlEstoque = 'mercadorias/estoque';
-}
+class Constants {}
 
 extension ContextExtensions on BuildContext {
   ColorScheme get myTheme => Theme.of(this).colorScheme;
@@ -37,3 +28,4 @@ extension ContextExtensions on BuildContext {
 
 const double kPadding = 10;
 const double kBorderRadius = 10;
+const String nameApp = 'Videos Green Screen';

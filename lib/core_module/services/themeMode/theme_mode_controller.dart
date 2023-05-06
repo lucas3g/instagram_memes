@@ -9,4 +9,7 @@ class ThemeModeController {
           .watch<AppStore>((store) => store.themeMode)
           .themeMode
           .value;
+
+  static AppStore get appStore => NavigationService.navigatorKey.currentContext!
+      .watch<AppStore>((store) => store.themeMode);
 }
