@@ -44,7 +44,7 @@ class _SplashPageState extends State<SplashPage> {
               textAlign: TextAlign.center,
             ),
             Text(
-              'Baixe os memes mais famosos do momento',
+              'Baixe videos com fundo verde',
               style:
                   context.textTheme.titleMedium!.copyWith(color: Colors.white),
               textAlign: TextAlign.center,

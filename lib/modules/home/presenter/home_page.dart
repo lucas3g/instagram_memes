@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisSpacing: 10,
                   childAspectRatio: 0.65,
                 ),
-                itemCount: 10,
+                itemCount: 3,
                 itemBuilder: (context, index) {
                   return const CardVideoWidget();
                 },
