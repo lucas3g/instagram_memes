@@ -26,20 +26,22 @@ class _HomePageState extends State<HomePage> {
             bottomRight: Radius.circular(kBorderRadius),
           ),
         ),
-        leading: IconButton(
-          onPressed: () {
-            appStore.changeThemeMode(
+        actions: [
+          IconButton(
+            onPressed: () {
+              appStore.changeThemeMode(
+                appStore.themeMode.value == ThemeMode.dark
+                    ? ThemeMode.light
+                    : ThemeMode.dark,
+              );
+            },
+            icon: Icon(
               appStore.themeMode.value == ThemeMode.dark
-                  ? ThemeMode.light
-                  : ThemeMode.dark,
-            );
-          },
-          icon: Icon(
-            appStore.themeMode.value == ThemeMode.dark
-                ? Icons.dark_mode
-                : Icons.light_mode,
+                  ? Icons.dark_mode
+                  : Icons.light_mode,
+            ),
           ),
-        ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(kPadding),

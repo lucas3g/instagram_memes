@@ -17,18 +17,20 @@ class _CardVideoWidgetState extends State<CardVideoWidget> {
   @override
   void initState() {
     super.initState();
+
     _controller = VideoPlayerController.asset('assets/videos/dog.mp4')
+      ..setVolume(0)
       ..initialize().then((_) {
         _controller.play();
         setState(() {});
-      })
-      ..setVolume(0);
+      });
   }
 
   @override
   void dispose() {
-    super.dispose();
     _controller.dispose();
+
+    super.dispose();
   }
 
   void playOrPauseVideo() {

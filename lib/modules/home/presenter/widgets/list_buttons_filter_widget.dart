@@ -9,7 +9,7 @@ class ListButtonsFilterWidget extends StatefulWidget {
       _ListButtonsFilterWidgetState();
 }
 
-enum Filters { popular, mostDownloaded, animals, all }
+enum Filters { popular, mostDownloaded, animals, news, all }
 
 class _ListButtonsFilterWidgetState extends State<ListButtonsFilterWidget> {
   Filters filterSelected = Filters.all;
@@ -23,6 +23,11 @@ class _ListButtonsFilterWidgetState extends State<ListButtonsFilterWidget> {
         scrollDirection: Axis.horizontal,
         children: [
           SegmentedButton<Filters>(
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
             showSelectedIcon: false,
             selected: {filterSelected},
             segments: [
@@ -36,6 +41,19 @@ class _ListButtonsFilterWidgetState extends State<ListButtonsFilterWidget> {
                 ),
                 icon: Icon(
                   Icons.all_inclusive,
+                  color: context.myTheme.primary,
+                ),
+              ),
+              ButtonSegment(
+                value: Filters.news,
+                label: Text(
+                  'Novos',
+                  style: context.textTheme.labelLarge!.copyWith(
+                    color: context.myTheme.primary,
+                  ),
+                ),
+                icon: Icon(
+                  Icons.newspaper_rounded,
                   color: context.myTheme.primary,
                 ),
               ),
@@ -68,7 +86,7 @@ class _ListButtonsFilterWidgetState extends State<ListButtonsFilterWidget> {
               ButtonSegment(
                 value: Filters.animals,
                 label: Text(
-                  'Animals',
+                  'Animais',
                   style: context.textTheme.labelLarge!.copyWith(
                     color: context.myTheme.primary,
                   ),
