@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_memes/core_module/services/themeMode/theme_mode_controller.dart';
 import 'package:instagram_memes/modules/home/presenter/widgets/card_videos_widget.dart';
+import 'package:instagram_memes/modules/home/presenter/widgets/list_buttons_filter_widget.dart';
 import 'package:instagram_memes/shared/components/my_input_widget.dart';
 import 'package:instagram_memes/utils/constants.dart';
 
@@ -48,6 +49,8 @@ class _HomePageState extends State<HomePage> {
               label: 'Pesquisar',
               hintText: 'Digite o título do video',
             ),
+            const Divider(),
+            const ListButtonsFilterWidget(),
             const Divider(),
             Text(
               'Lista de Videos',
